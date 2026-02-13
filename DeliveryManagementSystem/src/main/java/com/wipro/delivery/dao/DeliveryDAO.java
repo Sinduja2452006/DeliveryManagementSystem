@@ -34,7 +34,7 @@ public class DeliveryDAO {
 	        int rows = ps.executeUpdate();
 
 	        if (rows > 0) {
-	            connection.commit();   // ⭐ VERY IMPORTANT
+	            connection.commit();   
 	            result = "SUCCESS";
 	        } else {
 	            connection.rollback();
@@ -144,3 +144,4 @@ public class DeliveryDAO {
         return list;
     }
 }
+
