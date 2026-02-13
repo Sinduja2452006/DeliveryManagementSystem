@@ -33,7 +33,6 @@ public class MainServlet extends HttpServlet {
 
         try {
 
-            // ================= ADD RECORD =================
             if ("newRecord".equals(operation)) {
 
                 DeliveryBean bean = new DeliveryBean();
@@ -70,8 +69,6 @@ public class MainServlet extends HttpServlet {
                     resp.sendRedirect("success.html");
                 }
             }
-
-            // ================= VIEW ONE =================
             else if ("viewRecord".equals(operation)) {
 
                 String customerName = req.getParameter("customerName");
@@ -93,8 +90,6 @@ public class MainServlet extends HttpServlet {
                 RequestDispatcher rd = req.getRequestDispatcher("displayDelivery.jsp");
                 rd.forward(req, resp);
             }
-
-            // ================= VIEW ALL =================
             else if ("viewAllRecords".equals(operation)) {
 
                 List<DeliveryBean> list = admin.viewAllRecords();
@@ -115,3 +110,4 @@ public class MainServlet extends HttpServlet {
         }
     }
 }
+
